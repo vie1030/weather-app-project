@@ -15,9 +15,33 @@
   </head>
   <body>
     <div class="container">
-      <h1>hello!</h1>
-      <a href="" class="btn btn-primary">click me</a>
+      <div class="weather-app">
+        <h1>Tokyo, Japan</h1>
+        <ul>
+          <li id="date">Monday 10:30</li>
+          <li id="description">Clear</li>
+        </ul>
+
+        <div class="row">
+          <div class="col-6">
+            <span id="icon">🌞</span>
+            <span id="temperature">3°C | °F</span>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li id="highLowTemperature">9°C/-1°C</li>
+              <li id="feel">Feels like</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+    <small>
+      <a href="https://github.com/vie1030/weather-app-project"
+        >Open-source code</a
+      >
+      by Vilma Santos
+    </small>
     <script src="src/weather.js"></script>
   </body>
 </html>
