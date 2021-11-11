@@ -15,40 +15,47 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>Tokyo, Japan</h1>
-        <ul>
-          <li id="date">Monday 10:30</li>
-          <li id="description">Clear</li>
-        </ul>
-
-        <div class="row">
-          <div class="col-6">
-            <span id="icon">
-              <img
-                src="data:image/jpeg;base64,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"
-                alt="Clear"
-                width="100px"
-              />
-            </span>
-            <span id="temperature">3°C | °F</span>
-          </div>
-          <div class="col-6">
+      <div class="weather-app-view">
+        <div class="weather-app">
+          <div class="overviewToday">
+            <h1>Tokyo, Japan</h1>
             <ul>
-              <li id="highTemperature">High 9°C</li>
-              <li id="lowTemperature">Low -1°C</li>
-              <li id="feel">Feels like 0°C</li>
+              <li id="date">Monday 10:30</li>
+              <li id="description">Clear</li>
             </ul>
           </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="Clear"
+                  class="float-left"
+                />
+                <span class="float-left">
+                  <strong>10</strong>
+                  <span class="units"> °C | <a href="#">°F</a></span>
+                </span>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li id="highTemperature">High 9°C</li>
+                <li id="lowTemperature">Low -1°C</li>
+                <li id="feel">Feels like 0°C</li>
+              </ul>
+            </div>
+          </div>
         </div>
+
+        <small>
+          <a href="https://github.com/vie1030/weather-app-project"
+            >Open-source code</a
+          >
+          by Vilma Santos
+        </small>
       </div>
     </div>
-    <small>
-      <a href="https://github.com/vie1030/weather-app-project"
-        >Open-source code</a
-      >
-      by Vilma Santos
-    </small>
     <script src="src/weather.js"></script>
   </body>
 </html>
