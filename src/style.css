@@ -22,6 +22,7 @@ li {
   font-weight: 100;
   line-height: 20px;
   color: #777167;
+  text-transform: capitalize;
 }
 .weather-app-view {
   max-width: 600px;

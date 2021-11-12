@@ -10,6 +10,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>vanilla weather app</title>
   </head>
@@ -18,10 +19,10 @@
       <div class="weather-app-view">
         <div class="weather-app">
           <div class="overviewToday">
-            <h1>Tokyo, Japan</h1>
+            <h1 id="city">Tokyo, Japan</h1>
             <ul>
               <li id="date">Monday 10:30</li>
-              <li id="description">Clear</li>
+              <li id="description"></li>
             </ul>
           </div>
           <div class="row">
@@ -33,16 +34,16 @@
                   class="float-left"
                 />
                 <span class="float-left">
-                  <strong>10</strong>
+                  <strong id="temperature"></strong>
                   <span class="units"> °C | <a href="#">°F</a></span>
                 </span>
               </div>
             </div>
             <div class="col-6">
               <ul>
-                <li id="highTemperature">High 9°C</li>
-                <li id="lowTemperature">Low -1°C</li>
-                <li id="feel">Feels like 0°C</li>
+                <li>High <span id="highTemperature"></span> °C</li>
+                <li>Low <span id="lowTemperature"></span> °C</li>
+                <li>Feels like <span id="feel"></span> °C</li>
               </ul>
             </div>
           </div>
