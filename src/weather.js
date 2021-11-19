@@ -32,11 +32,8 @@ function formatDailyForecast(timestamp) {
 
 function showForecast(response) {
   let forecast = response.data.daily;
-
   let forecastElement = document.querySelector("#forecast");
-
   let forecastHTML = `<div class="row">`;
-
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
@@ -74,7 +71,6 @@ function showForecast(response) {
 function getForecast(coordinates) {
   let apiKey = "867dcf6bb3756e0001b67ad06b6f1ecd";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(showForecast);
 }
 
@@ -86,8 +82,8 @@ function showTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
   let temperatureElement = document.querySelector("#temperature");
-  celsiusTemperature = response.data.main.temp;
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
   let highTemperatureElement = document.querySelector("#highTemperature");
   highTemperatureElement.innerHTML = Math.round(response.data.main.temp_max);
   let lowTemperatureElement = document.querySelector("#lowTemperature");
@@ -115,31 +111,6 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
-
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celsiusElement.classList.remove("active");
-  fahrenheitElement.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function showCelsiusTemperature(event) {
-  event.preventDefault();
-  celsiusElement.classList.add("active");
-  fahrenheitElement.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
-let fahrenheitElement = document.querySelector("#fahrenheit-link");
-fahrenheitElement.addEventListener("click", showFahrenheitTemperature);
-
-let celsiusElement = document.querySelector("#celsius-link");
-celsiusElement.addEventListener("click", showCelsiusTemperature);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
